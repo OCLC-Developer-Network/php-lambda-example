@@ -1,0 +1,14 @@
+{
+  "name": "php-lambda-test",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "Apache 2.0",
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "devDependencies": {
+    "serverless": "^1.26.1"
+  }
+}
