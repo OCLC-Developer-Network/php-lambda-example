@@ -1,4 +1,7 @@
-service: my-test-php-app
+service: my-test-php-function
+
+custom:
+  bucket: kac-test-bucket-for-json
 
 provider:
  name: aws
@@ -7,12 +10,18 @@ provider:
  timeout: 10
  stage: production
  region: us-east-1
+ iamRoleStatements:
+   - Effect: Allow
+     Action:
+       - s3:GetObject
+     Resource: "arn:aws:s3:::${self:custom.bucket}/*"
 
 functions:
  api:
    handler: index.php
    layers:
-    - arn:aws:lambda:us-east-1:887080169480:layer:php71:6
+    - arn:aws:lambda:us-east-1:209497400698:layer:php-73:1
    events:
-     - http: ANY {proxy+}
-     - http: ANY /
+    - s3:
+        bucket: ${self:custom.bucket}
+        event: s3:ObjectCreated:*

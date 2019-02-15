@@ -1,0 +1,8 @@
+{
+"name": "apple crisp",
+"ingredients": [
+    {"name": "apples", "amount": "4 cups"},
+    {"name": "sugar", "amount": "3/4 cup"}
+],
+"instructions": "mix apples, sugar, cimmanon together. Cut together butter, oats, brown sugar."
+}

@@ -7,6 +7,6 @@ lambda(function (array $event) {
 	$client->registerStreamWrapper();
 	$bucket = $event['Records'][0]['s3']['bucket']['name'];
 	$key = $event['Records'][0]['s3']['object']['key'];
-	$json = json_decode($client->file("s3://" . $bucket . "/" . $key));
-	return 'My JSON ' . $json;
+	$json = file_get_contents("s3://" . $bucket . "/" . $key);
+	echo $json;
 });
