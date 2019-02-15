@@ -2,6 +2,7 @@
 	"require" : {
 		"aws/aws-sdk-php" : "^3.87",
 		"monolog/monolog" : "*",
-        "maxbanton/cwh" : "^1.0"
+        "maxbanton/cwh" : "^1.0",
+		"mnapoli/bref": "^0.3.2"
 	}
 }
