@@ -1,4 +1,8 @@
-service: my-test-php-app
+service: 
+    name: my-test-php-app
+
+custom:
+  bucket: php-app-logs
 
 provider:
  name: aws
@@ -7,12 +11,17 @@ provider:
  timeout: 10
  stage: production
  region: us-east-1
-
+ iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"     
 functions:
- api:
+ phpApp:
    handler: index.php
    layers:
-    - arn:aws:lambda:us-east-1:887080169480:layer:php71:6
+    - arn:aws:lambda:us-east-1:209497400698:layer:php-73-fpm:1
    events:
      - http: ANY {proxy+}
      - http: ANY /
