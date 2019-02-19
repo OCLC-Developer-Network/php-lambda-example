@@ -3,3 +3,4 @@
 /.serverless/
 .project
 *.log
+/.buildpath

@@ -1,22 +1,17 @@
 service: 
     name: my-test-php-app
-
-custom:
-  bucket: php-app-logs
-
+package:
+  exclude:
+    - config/config.yml
+    - .gitignore
+    - .git/**    
 provider:
  name: aws
  runtime: provided
  memorySize: 128
  timeout: 10
  stage: production
- region: us-east-1
- iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - s3:PutObject
-        - s3:GetObject
-      Resource: "arn:aws:s3:::${self:custom.bucket}/*"     
+ region: us-east-1   
 functions:
  phpApp:
    handler: index.php
