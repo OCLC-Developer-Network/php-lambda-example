@@ -1,14 +1,14 @@
 {
-    "name" : "OCLC/Lambda_PHP_Demo",
-    "version" : "0.1",
-    "license" : "Apache-2.0",    
+	"name" : "OCLC/Lambda_PHP_Demo",
+	"version" : "0.1",
+	"license" : "Apache-2.0",
 	"repositories" : [{
 			"type" : "git",
 			"url" : "https://github.com/OCLC-Developer-Network/oclc-auth-php.git"
 		}
 	],
 	"require" : {
-		"OCLC/Auth" : ">=3.0",
+		"OCLC/Auth" : ">=4.2",
 		"pear/file_marc" : "1.1.5",
 		"symfony/yaml" : "~2.3.7",
 		"slim/slim" : "^3.0",

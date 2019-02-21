@@ -1,0 +1,6 @@
+prod:
+    wskey: test
+    secret: secret
+    principalID: id 
+    principalIDNS: namespace
+    institution: 128807

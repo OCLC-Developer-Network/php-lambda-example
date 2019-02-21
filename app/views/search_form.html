@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}Find OCLC Number{% endblock %}
+{% block content %}
+<h1>Search by OCLC Number</h1>
+<form name="search" action="{{ path_for('display_bib') }}" method="GET">
+<input type="text" name="oclcnumber" />
+<input type="submit" name="search" value="Search"/>
+</form>
+{% endblock %}
