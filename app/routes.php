@@ -3,7 +3,12 @@
 
 //display form
 $app->get('/', function ($request, $response, $args) {
-	return $this->view->render($response, 'search_form.html');
+	if ($_SERVER['SERVER_NAME'] !== 'localhost') {
+		$lambda = true;
+	} else {
+		$lambda = false;
+	}
+	return $this->view->render($response, 'search_form.html', ['lambda' => $lambda]);
 })->setName('display_search_form');
 
 //display bib route
